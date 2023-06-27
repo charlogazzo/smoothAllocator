@@ -1,12 +1,15 @@
 package com.charlogazzo.smoothallocator.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 import java.util.List;
 
-@AllArgsConstructor
-@Builder
+@Entity
 public class Depot {
+    @Id
+    private String name;
+    @OneToMany
     private List<Warehouse> warehouses;
 }
